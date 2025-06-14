@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #
-PID=$(pgrep -f "4-to_infinity_and_beyond")
-if [ -n "$PID" ]; then
-  perl -e "kill 15, $PID"
-fi
+pkill -f "4-to_infinity_and_beyond"
+sleep 1
+pgrep -f "4-to_infinity_and_beyond" | wc -l
