@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 #
-for file in *-*
-do
-  name_after_dash="${file#*-}"
-  echo "$name_after_dash"
+for file in *; do
+  if [[ "$file" == *-* ]]; then
+    echo "${file#*-}"
+  else
+    echo "$file"
+  fi
 done
